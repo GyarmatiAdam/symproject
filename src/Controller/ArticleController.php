@@ -7,14 +7,15 @@ use Symfony\Component\HttpFoundation\Response as Something;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="app_homepage")
      */
     public function homepage()
     {
-        return new Something('First page');
+        #return new Something('First page');
+        return $this->render('article/homepage.html.twig');
     }
       /**
-     * @Route("/other/{anything}")
+     * @Route("/other/{anything}", name="article_show")
      */
     public function show($anything)
     {
